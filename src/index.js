@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import ReactDom from 'react-dom';
 import TodoContainer from './components/TodoContainer';
 
-ReactDOM.render(<TodoContainer />, document.getElementById('root'));
+ReactDom.render(<React.StrictMode>
+  <TodoContainer />
+                </React.StrictMode>,
+document.getElementById('root'));

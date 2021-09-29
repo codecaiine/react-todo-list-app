@@ -1,19 +1,40 @@
 import React from 'react';
+import TodosList from './TodosList';
+import Header from './Header';
 
-const TodoContainer = () => (
-  <div>
-    <h1>
+class TodoContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [{
+        id: 1,
+        title: 'Setup development environment',
+        completed: true,
+      },
+      {
+        id: 2,
+        title: 'Develop website and add content',
+        completed: false,
+      },
+      {
+        id: 3,
+        title: 'Deploy to live server',
+        completed: false,
+      },
+      ],
+    };
+  }
 
-      Hello from Create React App
+  render() {
+    const { todos } = this.state;
+    // console.log(todos);
+    return (
+      <div>
+        <Header />
+        <TodosList todos={todos} />
+      </div>
+    );
+  }
+}
 
-    </h1>
-
-    <p>
-
-      I am in a React Component!
-
-    </p>
-
-  </div>
-);
 export default TodoContainer;
