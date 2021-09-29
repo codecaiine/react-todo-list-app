@@ -3,21 +3,18 @@ import TodoItem from './TodoItem';
 /* eslint-disable react/prop-types */
 
 const TodosList = (props) => {
-  const { todos } = props;
-  return (
-    <ul className="my-todo">
-      {' '}
-      {
-            todos.map((todo) => (
-              <TodoItem
-                key={todo.id}
-                todo={todo}
-              />
-            ))
-        }
-
-    </ul>
-  );
-};
-
-export default TodosList;
+        const { todos } = props;
+        const { handleChangeProps } = props;
+        const { deleteTodoProps } = props;
+        return ( <
+            ul className = "todo-wrapper" > {
+                todos.map((todo) => ( <
+                    TodoItem key = { todo.id }
+                    todo = { todo }
+                    handleChangeProps = { handleChangeProps }
+                    deleteTodoProps = { deleteTodoProps }
+                    />
+                ))
+            } <
+            /ul>
+        );
