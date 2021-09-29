@@ -5,7 +5,7 @@ import TodoItem from './TodoItem';
 const TodosList = (props) => {
   const { todos } = props;
   return (
-    <ul>
+    <ul className="my-todo">
       {' '}
       {
             todos.map((todo) => (
@@ -15,7 +15,6 @@ const TodosList = (props) => {
               />
             ))
         }
-      {' '}
 
     </ul>
   );
