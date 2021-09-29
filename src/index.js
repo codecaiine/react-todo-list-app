@@ -4,9 +4,7 @@ import ReactDom from 'react-dom';
 import './App.css';
 import TodoContainer from './components/TodoContainer';
 
-ReactDom.render( < React.StrictMode >
-    <
-    TodoContainer / >
-    <
-    /React.StrictMode>,
-    document.getElementById('root'));
+ReactDom.render(<React.StrictMode>
+    <TodoContainer />
+                </React.StrictMode>,
+document.getElementById('root'));
