@@ -12,7 +12,7 @@ body {
     height: 100vh;
 }
 
-.my-container {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
