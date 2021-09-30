@@ -12,11 +12,6 @@ class TodoItem extends React.Component {
         };
     }
 
-    componentWillUnmount() {
-        console.log('Cleaning up...');
-    }
-
-
     handleEditing = () => {
         this.setState({
             editing: true,
@@ -73,26 +68,22 @@ class TodoItem extends React.Component {
                     handleChangeProps(id);
                 }
             }
-            /> { ' ' } <
+            /> <
             button type = "button"
             onClick = {
                 () => {
                     deleteTodoProps(id);
                 }
             } >
-            Delete { ' ' } <
-            /button> { ' ' } <
+            Delete <
+            /button> <
             span style = { completed ? completedStyle : null }
             onClick = { this.handleEditing }
             onKeyPress = { this.handleKeyPress }
             role = "presentation" >
-            { ' ' } { title } { ' ' }
-
-            <
-            /span> { ' ' }
-
-            <
-            /div> { ' ' } <
+            { title } <
+            /span> <
+            /div> <
             input type = "text"
             className = { styles.textInput }
             style = { editMode }
@@ -103,9 +94,7 @@ class TodoItem extends React.Component {
                 }
             }
             onKeyDown = { this.handleUpdatedDone }
-            /> { ' ' }
-
-            <
+            /> <
             /li>
         );
     }
