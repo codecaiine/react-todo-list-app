@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaTrash } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
 /* eslint-disable react/prop-types */
 /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
@@ -54,16 +55,17 @@ const TodoItem = (props) => {
         <
         button type = "button"
         onClick = {
-            () => props.deleteTodoProps(id) } >
-        Delete <
+            () => props.deleteTodoProps(id)
+        } >
+        <
+        FaTrash / > <
         /button> <
         span style = { completed ? completedStyle : null }
         onClick = { handleEditing }
         onKeyPress = { handleKeyPress }
-        role = "presentation" >
-        { title } <
-        /span> <
-        /div> <
+        role = "presentation" > { title } <
+        /span> < /
+        div > <
         input type = "text"
         style = { editMode }
         className = { styles.textInput }
@@ -74,8 +76,8 @@ const TodoItem = (props) => {
             }
         }
         onKeyDown = { handleUpdatedDone }
-        /> <
-        /li>
+        /> < /
+        li >
     );
 };
 // class TodoItem extends React.Component {
