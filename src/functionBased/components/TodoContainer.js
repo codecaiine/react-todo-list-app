@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import About from '../pages/About';
+import NotMatch from '../pages/NotMatch';
 import TodosList from './TodosList';
 import InputTodo from './InputTodo';
 import Header from './Header';
+import Navbar from './Navbar';
 
 const TodoContainer = () => {
     const getInitialTodos = () => {
@@ -16,6 +20,10 @@ const TodoContainer = () => {
     useEffect(() => {
         const temp = localStorage.getItem('todos');
         const loadedTodos = JSON.parse(temp);
+
+        if (loadedTodos) {
+            setTodos(loadedTodos);
+        }
     }, [setTodos]);
 
     useEffect(() => {
@@ -44,6 +52,7 @@ const TodoContainer = () => {
             title,
             completed: false,
         };
+
         setTodos([...todos, newTodo]);
     };
 
@@ -60,6 +69,14 @@ const TodoContainer = () => {
     };
 
     return ( <
+        >
+        <
+        Navbar / >
+        <
+        Switch >
+        <
+        Route exact path = "/" >
+        <
         div className = "container" >
         <
         div className = "inner" >
@@ -74,7 +91,20 @@ const TodoContainer = () => {
         setUpdate = { setUpdate }
         /> <
         /div> <
-        /div>
+        /div> <
+        /Route> <
+        Route path = "/about" >
+        <
+        About / >
+        <
+        /Route> <
+        Route path = "*" >
+        <
+        NotMatch / >
+        <
+        /Route> <
+        /Switch> <
+        />
     );
 };
 
