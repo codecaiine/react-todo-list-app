@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.4;
   color: #444;
   background: #fff;
@@ -64,6 +64,16 @@ body {
   border: none;
 }
 
+.input-submit svg {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.active-link {
+  color: black;
+  text-decoration: underline;
+}
+
 .navBar {
   position: relative;
 }
@@ -110,13 +120,6 @@ a {
   margin-top: 7rem;
 }
 
-.active-link {
-  color: orangered;
-  text-decoration: underline;
-}
-
-/* about page */
-
 .about__content {
   padding: 8rem 40px;
   display: flex;
@@ -151,4 +154,5 @@ a {
 
 .main__content p {
   line-height: 25px;
+  width: 62%;
 }
