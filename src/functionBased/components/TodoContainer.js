@@ -80,27 +80,25 @@ const TodoContainer = () => {
             <div className="inner">
               <Header />
               <InputTodo addTodoProps={addTodoItem} />
-              {' '}
+
               <TodosList
                 todos={todos}
                 handleChangeProps={handleChange}
                 deleteTodoProps={delTodo}
                 setUpdate={setUpdate}
               />
-              {' '}
 
             </div>
           </div>
         </Route>
-        {' '}
+
         <Route path="/about">
           <About />
         </Route>
-        {' '}
+
         <Route path="*">
           <NotMatch />
         </Route>
-        {' '}
 
       </Switch>
     </>
