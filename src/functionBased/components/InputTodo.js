@@ -42,9 +42,10 @@ const InputTodo = (props) => {
         type = "button" >
         <
         FaPlusCircle style = {
-            { color: 'darkcyan', fontSize: '20px', marginTop: '2px' } }
-        /> <
-        /button> <
+            { color: 'darkcyan', fontSize: '20px', marginTop: '2px' }
+        }
+        /> < /
+        button > <
         /form>
     );
 };

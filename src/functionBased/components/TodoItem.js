@@ -40,18 +40,17 @@ const TodoItem = (props) => {
     }, []);
 
     return ( < li className = { styles.item } >
-        <
-        div onDoubleClick = { handleEditing }
-        style = { viewMode } >
-        <
-        input type = "checkbox"
-        className = { styles.checkbox }
-        checked = { completed }
-        onChange = {
-            () => props.handleChangeProps(id)
-        }
-        /> <
-        button onClick = {
+            <
+            div onDoubleClick = { handleEditing }
+            style = { viewMode } >
+            <
+            input type = "checkbox"
+            className = { styles.checkbox }
+            checked = { completed }
+            onChange = {
+                () => props.handleChangeProps(id)
+            }
+            /> <button onClick = {
             () => props.deleteTodoProps(id)
         } >
         <
@@ -62,23 +61,23 @@ const TodoItem = (props) => {
                 backgroundColor: 'white',
             }
         }
-        /> < /
-        button > <
+    /> < /
+    button > <
         span style = { completed ? completedStyle : null } > { title } < /span> < /
-        div > <
+    div > <
         input type = "text"
-        style = { editMode }
-        className = { styles.textInput }
-        value = { title }
-        onChange = {
-            (e) => {
-                props.setUpdate(e.target.value, id);
-            }
+    style = { editMode }
+    className = { styles.textInput }
+    value = { title }
+    onChange = {
+        (e) => {
+            props.setUpdate(e.target.value, id);
         }
-        onKeyDown = { handleUpdatedDone }
-        /> < /
-        li >
-    );
+    }
+    onKeyDown = { handleUpdatedDone }
+    /> < /
+    li >
+);
 };
 
 export default TodoItem;
