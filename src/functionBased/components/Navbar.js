@@ -5,7 +5,6 @@ import { FiMenu } from 'react-icons/fi';
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-
   const links = [
     {
       id: 1,
@@ -19,17 +18,15 @@ const Navbar = () => {
     },
   ];
 
-  const handleToggle = () => {
-    setNavbarOpen(!navbarOpen);
-  };
-
   const closeMenu = () => {
     setNavbarOpen(false);
   };
 
+  const handleToggle = () => setNavbarOpen((prev) => !prev);
+
   return (
     <nav className="navBar">
-      <button onClick={handleToggle} type="button">
+      <button type="button" onClick={handleToggle}>
         {navbarOpen ? (
           <MdClose style={{ color: '#fff', width: '40px', height: '40px' }} />
         ) : (

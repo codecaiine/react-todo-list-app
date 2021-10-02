@@ -1,13 +1,17 @@
-/* eslint-disable */
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
-import styles from './TodoItem.module.scss';
+import styles from './TodoItem.module.css';
+/* eslint-disable react/prop-types */
+/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
 
   const handleEditing = () => {
+    setEditing(true);
+  };
+
+  const handleKeyPress = () => {
     setEditing(true);
   };
 
@@ -23,8 +27,8 @@ const TodoItem = (props) => {
     opacity: 0.4,
     textDecoration: 'line-through',
   };
-
-  const { completed, id, title } = props.todo;
+  const { todo } = props;
+  const { completed, id, title } = todo;
 
   const viewMode = {};
   const editMode = {};
@@ -35,29 +39,26 @@ const TodoItem = (props) => {
     editMode.display = 'none';
   }
 
-  useEffect(() => () => {
-    console.log('Cleaning up...');
-  }, []);
-
   return (
     <li className={styles.item}>
-      <div onDoubleClick={handleEditing} style={viewMode}>
+      <div style={viewMode}>
         <input
           type="checkbox"
           className={styles.checkbox}
           checked={completed}
           onChange={() => props.handleChangeProps(id)}
         />
-        <button onClick={() => props.deleteTodoProps(id)}>
-          <FaTrash
-            style={{
-              color: 'darkcyan',
-              fontSize: '16px',
-              backgroundColor: 'white',
-            }}
-          />
+        <button type="button" onClick={() => props.deleteTodoProps(id)}>
+          <FaTrash style={{ color: 'orangered', fontSize: '16px' }} />
         </button>
-        <span style={completed ? completedStyle : null}>{title}</span>
+        <span
+          style={completed ? completedStyle : null}
+          onClick={handleEditing}
+          onKeyPress={handleKeyPress}
+          role="presentation"
+        >
+          {title}
+        </span>
       </div>
       <input
         type="text"
