@@ -62,43 +62,24 @@ const TodoContainer = () => {
         localStorage.setItem('todos', temp);
     }, [todos]);
 
-    return ( <
-        >
-        <
-        Navbar / >
-        <
-        Switch >
-        <
-        Route exact path = "/" >
-        <
-        div className = "container" >
-        <
-        div className = "inner" >
-        <
-        Header / >
-        <
-        InputTodo addTodoProps = { addTodoItem }
-        /> <
-        TodosList todos = { todos }
-        handleChangeProps = { handleChange }
+    return ( 
+     <>
+        <Navbar/>
+        <Switch>
+        <Route exact path = "/" >
+        <div className = "container" >
+        <div className = "inner" >
+        <Header/>
+        <InputTodo addTodoProps = { addTodoItem }/>
+         <TodosList todos = { todos } handleChangeProps = { handleChange }
         deleteTodoProps = { delTodo }
-        setUpdate = { setUpdate }
-        /> <
-        /div> <
-        /div> <
-        /Route> <
-        Route path = "/about" >
-        <
-        About / >
-        <
-        /Route> <
-        Route path = "*" >
-        <
-        NotMatch / >
-        <
-        /Route> <
-        /Switch> <
-        />
+        setUpdate = { setUpdate }/> </div> </div> </Route >
+         <Route path = "/about" >
+        <About/>
+        </Route> <Route path = "*" >
+        <NotMatch/>
+        </Route> </Switch> 
+        </>
     );
 };
 
